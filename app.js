@@ -50,10 +50,7 @@ app.stage.addChild(line);
 
 const torus = new Graphics();
 
-torus
-  .beginFill(0xfffddd)
-  .drawTorus(100, 700, 80, 100, 0, Math.PI / 2)
-  .endFill();
+torus.beginFill(0xfffddd).drawTorus(100, 700, 80, 100, 0).endFill();
 
 app.stage.addChild(torus);
 
@@ -79,3 +76,54 @@ myText.text = "Text Changed!!";
 
 myText.style.wordWrap = true;
 myText.style.wordWrapWidth = 100;
+
+// app.ticker.add((delta) => loop(delta));
+
+// function loop(delta) {
+//   const rect = new Graphics();
+
+//   rect
+//     .beginFill(0xaa33bb)
+//     .drawRect(
+//       Math.random() * app.screen.width,
+//       Math.random() * app.screen.height,
+//       11,
+//       12
+//     )
+//     .endFill();
+
+//   app.stage.addChild(rect);
+// }
+
+// const char1Texture = PIXI.Texture.from('./images/char1.png');
+// const char1Sprite = new PIXI.Sprite(char1Texture);
+
+const char1Sprite = PIXI.Sprite.from("./images/char1.png");
+app.stage.addChild(char1Sprite);
+
+char1Sprite.width = 200;
+char1Sprite.height = 200;
+
+// char1Sprite.scale.set(2, 2);
+
+// char1Sprite.x = 20
+// char1Sprite.y = 30
+
+char1Sprite.position.set(590, 590);
+
+// app.ticker.add((delta) => loop(delta));
+
+// function loop(delta) {
+//   char1Sprite.x += 1;
+// }
+
+// char1Sprite.rotation = 1;
+
+char1Sprite.anchor.x = 0.5;
+char1Sprite.anchor.y = 0.5;
+
+app.ticker.add((delta) => loop(delta));
+
+function loop(delta) {
+  char1Sprite.rotation += 0.1;
+}
