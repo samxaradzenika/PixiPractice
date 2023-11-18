@@ -177,3 +177,13 @@ document.body.appendChild(app.view);
 //   spr2.position.set(200, 200);
 //   app.stage.addChild(spr2);
 // }
+
+// const loader = PIXI.Loader.shared;
+
+// loader.add("tileset", "./images/drags.json").load(setup);
+
+// function setup(loader, resources) {
+//   const dragsTexture = PIXI.Texture.from("drags.png");
+//   const dragSprite = new PIXI.Sprite(dragsTexture);
+//   app.stage.addChild(dragSprite);
+// }
